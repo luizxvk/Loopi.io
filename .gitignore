@@ -1,0 +1,27 @@
+# Ambiente virtual
+venv/
+.venv/
+
+# PyCache
+__pycache__/
+*.py[cod]
+
+# Arquivos de log
+*.log
+
+# VSCode
+.vscode/
+.vscode/*
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de build
+*.egg-info/
+dist/
+build/
+
+# Qt Designer/Compiler
+*.qrc
+*.ui
