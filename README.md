@@ -2,6 +2,11 @@
   <img src="assets/Loopi.io.png" alt="Loopi.io Logo" width="150"/>
 </p>
 
+<p align="center">
+  <img src="assets/interface_preview.png" alt="Interface atual do Loopi.io" width="600"/>
+</p>
+
+
 # 🎵 Loopi.io - Player de Música Estilizado
 
 
