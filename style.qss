@@ -1,0 +1,60 @@
+QMainWindow {
+    background-color: transparent;
+}
+
+QWidget {
+    background-color: transparent;
+    color: #EEEEEE;
+    font-family: 'San Francisco';
+    font-size: 14px;
+}
+
+/* Labels */
+QLabel {
+    background-color: transparent;
+    color: #EEEEEE;
+    font-weight: normal;
+}
+
+/* Lista de músicas */
+QListWidget {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* Botões padrão */
+QPushButton {
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+/* Slider */
+QSlider::groove:horizontal {
+    background: rgba(255, 255, 255, 0.1);
+    height: 6px;
+    border-radius: 3px;
+    border: none;
+}
+
+QSlider::handle:horizontal {
+    background: #EEEEEE;
+    width: 14px;
+    border-radius: 7px;
+    margin: -4px 0;
+    border: none;
+}
+
+/* Remove subpage e addpage para evitar contorno extra */
+QSlider::add-page:horizontal,
+QSlider::sub-page:horizontal {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+/* Segurança extra pra remover qualquer contorno visual */
+* {
+    outline: none;
+}
