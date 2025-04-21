@@ -1,6 +1,9 @@
 <p align="center">
-  <img src="assets/Loopi.io.png" alt="Loopi.io Logo" width="120"/>
+  <img src="assets/Loopi.io.png" alt="Loopi.io Logo" width="40" style="vertical-align: middle;"/>
+  <span style="font-size: 32px; font-weight: bold; vertical-align: middle;"> Loopi.io</span>
 </p>
+
+---
 
 # 🎵 Loopi.io - Player de Música Estilizado
 
