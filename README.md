@@ -1,4 +1,4 @@
-# 🎵 SpotiPlay - Player de Música Estilizado
+# 🎵 Loopi.io - Player de Música Estilizado
 
 Um player de música moderno e minimalista desenvolvido com **Python + PyQt6**, inspirado em estética premium como o Apple Music e Cider. O projeto oferece uma interface limpa e intuitiva para reprodução de músicas locais, com suporte a metadados e uma experiência visual elegante.
 
