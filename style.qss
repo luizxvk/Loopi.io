@@ -36,6 +36,7 @@ QSlider::groove:horizontal {
     height: 6px;
     border-radius: 3px;
     border: none;
+    outline: none;
 }
 
 QSlider::handle:horizontal {
@@ -44,17 +45,21 @@ QSlider::handle:horizontal {
     border-radius: 7px;
     margin: -4px 0;
     border: none;
+    outline: none;
 }
 
-/* Remove subpage e addpage para evitar contorno extra */
-QSlider::add-page:horizontal,
-QSlider::sub-page:horizontal {
+/* Remove qualquer contorno da barra de progresso */
+QSlider::sub-page:horizontal,
+QSlider::add-page:horizontal {
     background: transparent;
     border: none;
     border-radius: 0;
+    outline: none;
 }
 
-/* Segurança extra pra remover qualquer contorno visual */
+/* Segurança extra contra qualquer contorno forçado */
 * {
     outline: none;
+    border: none;
+    box-shadow: none;
 }

@@ -13,6 +13,7 @@ from mutagen.flac import FLAC
 import pygame
 from PyQt6.QtGui import QFontDatabase
 from PyQt6.QtWidgets import QSizePolicy
+from PyQt6.QtWidgets import QGridLayout
 
 class MusicPlayer(QMainWindow):
 
@@ -74,26 +75,32 @@ class MusicPlayer(QMainWindow):
         progress_wrapper = QWidget()
         progress_wrapper.setFixedHeight(70)
         progress_wrapper.setStyleSheet("""
-            background-color: rgba(0, 0, 0, 0.15);
+            background-color: rgba(255, 255, 255, 0.04);
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            border: none;
         """)
 
-        shadow = QGraphicsDropShadowEffect()
-        shadow.setOffset(0, 4)
-        shadow.setBlurRadius(25)
-        shadow.setColor(Qt.GlobalColor.black)
-        progress_wrapper.setGraphicsEffect(shadow)
+        # shadow = QGraphicsDropShadowEffect()
+        # shadow.setOffset(0, 4)
+        # shadow.setBlurRadius(25)
+        # shadow.setColor(Qt.GlobalColor.black)
+        # progress_wrapper.setGraphicsEffect(shadow)
 
         wrapper_layout = QVBoxLayout()
         wrapper_layout.setContentsMargins(12, 8, 12, 4)
         wrapper_layout.setSpacing(0)
         progress_wrapper.setLayout(wrapper_layout)
 
-        slider_layout = QHBoxLayout()
-        slider_layout.setContentsMargins(0, 0, 0, 0)
-        slider_layout.setSpacing(10)
+            # NOVO: Grid com ícones e tempos
+        # SLIDER SETUP
 
+        slider_layout = QGridLayout()
+        slider_layout.setContentsMargins(0, 0, 0, 0)
+        slider_layout.setHorizontalSpacing(8)
+        slider_layout.setVerticalSpacing(4)
+        slider_layout.setColumnStretch(1, 1)
+
+        # ícones e labels
         repeat_icon = QLabel()
         repeat_icon.setPixmap(QPixmap("assets/icons/repeat.png").scaled(18, 18, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
         repeat_icon.setStyleSheet("background: transparent; border: none;")
@@ -105,26 +112,25 @@ class MusicPlayer(QMainWindow):
         download_icon = QLabel()
         download_icon.setPixmap(QPixmap("assets/icons/download.png").scaled(18, 18, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
         download_icon.setStyleSheet("background: transparent; border: none;")
-        slider_layout.addWidget(repeat_icon)
-        slider_layout.addWidget(self.progress_slider, 1)
-        slider_layout.addWidget(download_icon)
-
-        time_layout = QHBoxLayout()
-        time_layout.setContentsMargins(2, 0, 2, 0)
-        time_layout.setSpacing(10)
 
         self.time_label = QLabel("00:00")
         self.time_label.setStyleSheet("color: white; font-size: 11px; background: transparent; border: none;")
+
         self.duration_label = QLabel("-00:00")
         self.duration_label.setStyleSheet("color: white; font-size: 11px; background: transparent; border: none;")
 
-        time_layout.addWidget(self.time_label)
-        time_layout.addStretch()
-        time_layout.addWidget(self.duration_label)
+        # GRID
+        slider_layout.addWidget(repeat_icon, 0, 0)
+        slider_layout.addWidget(self.progress_slider, 0, 1)
+        slider_layout.addWidget(download_icon, 0, 2)
+
+        slider_layout.addWidget(self.time_label, 1, 0, alignment=Qt.AlignmentFlag.AlignLeft)
+        slider_layout.addWidget(QWidget(), 1, 1)  # espaço entre os tempos
+        slider_layout.addWidget(self.duration_label, 1, 2, alignment=Qt.AlignmentFlag.AlignRight)
 
         wrapper_layout.addLayout(slider_layout)
-        wrapper_layout.addLayout(time_layout)
 
+        # ✅ aqui é o certo de adicionar o progress_wrapper
         content_layout.addWidget(progress_wrapper)
 
 
@@ -231,7 +237,8 @@ class MusicPlayer(QMainWindow):
 
         if os.path.exists("style.qss"):
             with open("style.qss", "r") as f:
-                self.setStyleSheet(f.read())
+                qss = f.read()
+                self.setStyleSheet(qss) 
 
 
 
