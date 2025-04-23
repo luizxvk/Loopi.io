@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 
-const pingRoutes = require("./routes/pingRoutes");
+const musicRoutes = require("./routes/musicRoutes");
 
 app.use(express.json());
-app.use("/api", pingRoutes); // essa linha é essencial
+app.use("/api/music", musicRoutes);
 
 module.exports = app;

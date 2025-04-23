@@ -2,7 +2,7 @@
   <img src="assets/Loopi.io.png" alt="Loopi.io Logo" width="150"/>
 </p>
 
-# 🎧 Loopi.io - API Node.js do Player de Música
+# 🎧 Loopi.io - Player de Música
 
 Loopi.io é uma aplicação moderna que começou como um player de música desktop em **Python + PyQt6** e agora evolui para uma arquitetura web escalável com **Node.js + Express**, usando **padrão MVC** para garantir manutenibilidade, performance e profissionalismo.
 
@@ -50,7 +50,7 @@ Loopi.io/
 
 ### 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/loopi.io.git
+git clone https://github.com/luizxvk/loopi.io.git
 cd loopi.io
 ```
 
