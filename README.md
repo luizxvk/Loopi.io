@@ -2,95 +2,104 @@
   <img src="assets/Loopi.io.png" alt="Loopi.io Logo" width="150"/>
 </p>
 
-# 🎵 Loopi.io - Player de Música 
+# 🎧 Loopi.io - API Node.js do Player de Música
 
+Loopi.io é uma aplicação moderna que começou como um player de música desktop em **Python + PyQt6** e agora evolui para uma arquitetura web escalável com **Node.js + Express**, usando **padrão MVC** para garantir manutenibilidade, performance e profissionalismo.
 
-
-Um player de música moderno e minimalista desenvolvido com **Python + PyQt6**, inspirado em estética premium. O projeto oferece uma interface limpa e intuitiva para reprodução de músicas locais, com suporte a metadados e uma experiência visual elegante.
-
-> ⚠️ **Aviso:** Este projeto ainda está em desenvolvimento e pode conter bugs.
+> ⚠️ Projeto em desenvolvimento ativo. Pode conter funcionalidades parciais e ajustes em andamento.
 
 ---
 
-## 🛠️ Funcionalidades Técnicas
+## 🚀 Tecnologias Utilizadas
 
-- 🎧 **Reprodução de Músicas Locais**:
-  - Suporte a formatos como `.mp3`, `.wav`, `.ogg`, `.flac`.
-
-- 📑 **Leitura de Metadados**:
-  - Extração de capa do álbum, nome da faixa, artista, duração da música.
-
-- 📊 **Barra de Progresso**:
-  - Estilizada, com tempo decorrido e restante.
-
-- 🎨 **Interface Estilizada**:
-  - Tema escuro translúcido com botões personalizados.
-  - Tipografia moderna com a fonte San Francisco.
-
-- 🌎 **Navegação por Gênero**:
-  - Botões para gêneros: Dance, Rock, Eletronic, Chill (em desenvolvimento).
-
-- 📹 **Capa do Álbum**:
-  - Renderiza automaticamente a imagem extraída dos metadados da faixa.
-
-- 📕 **Estilo Personalizado**:
-  - Utiliza arquivos `.qss` para facilitar customizações visuais.
+- **Node.js**
+- **Express.js**
+- **JavaScript (ES6+)**
+- **Arquitetura MVC (Model-View-Controller)**
+- **Insomnia/Postman** para testes de rotas
 
 ---
 
-## 📄 Estrutura Principal
+## 📁 Estrutura de Pastas
 
 ```
-SpotiPlay/
-├── assets/
-│   ├── background.jpg
-│   ├── icons/
-│   └── fonts/SanFrancisco/
-├── music_player.py
-└── style.qss
+Loopi.io/
+├── controllers/
+│   └── pingController.js
+├── routes/
+│   └── pingRoutes.js
+├── services/
+├── models/
+├── config/
+├── app.js
+├── server.js
+└── package.json
 ```
 
 ---
 
-## 📅 Requisitos
+## 📌 Rotas Atuais
 
-- Python 3.9 ou superior.
-- Bibliotecas:
-  - PyQt6
-  - pygame
-  - mutagen
+| Método | Rota            | Descrição          |
+|--------|------------------|--------------------|
+| GET    | `/api/ping`      | Teste de conexão   |
 
-Instale com:
+---
+
+## 🛠️ Como Rodar o Projeto
+
+### 1. Clone o repositório:
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/seu-usuario/loopi.io.git
+cd loopi.io
 ```
 
----
-
-## 📅 Uso
-
-Execute o aplicativo com:
+### 2. Instale as dependências:
 ```bash
-python music_player.py
+npm install
+```
+
+### 3. Inicie o servidor:
+```bash
+npm run dev
+```
+
+O servidor ficará disponível em `http://localhost:3000`.
+
+---
+
+## 🔍 Testando a API
+
+Use uma ferramenta como o **Postman** ou **Insomnia** e envie uma requisição GET para:
+
+```
+http://localhost:3000/api/ping
+```
+
+**Resposta esperada:**
+```json
+{ "message": "pong" }
 ```
 
 ---
 
-## 💡 Atualizações Futuras
+## 📈 Próximas Funcionalidades
 
-- [ ] Conexão com API de streaming.
-- [ ] Integração com letras da música.
-- [ ] Equalizador embutido.
-- [ ] Seleção de temas (light/dark/dynamic).
-- [ ] Gerenciador de playlists locais.
-- [ ] Versão responsiva para Android com PySide + Kivy (ideia).
+- [ ] CRUD de playlists
+- [ ] Upload de músicas via API
+- [ ] Integração com base de dados
+- [ ] Autenticação e perfis de usuário
+- [ ] Dashboard de consumo
+- [ ] Deploy em ambiente cloud
 
 ---
 
-## 💼 Licença
+## 📄 Licença
 
-Este projeto está sob a licença MIT. Sinta-se à vontade para usar, estudar e modificar.
+Este projeto está sob a licença MIT. Livre para modificar e evoluir.
 
-## 📌 Versão
-**Versão Atual:** 0.2.0  
-Este projeto está em desenvolvimento contínuo.
+---
+
+## 🧠 Visão do Projeto
+
+> Transformar o player Loopi.io em uma **plataforma de streaming** com foco em UX premium, backend escalável e integração multiplataforma (web, desktop, mobile).
