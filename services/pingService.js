@@ -1,0 +1,2 @@
+// pingService.js
+module.exports = {};
